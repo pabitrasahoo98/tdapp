@@ -67,6 +67,16 @@ const userSchema=new mongoose.Schema({
 
 const  User= mongoose.model("users",userSchema)
 
+app.get('/',async(req,res)=> {
+  try{
+
+res.send("server is running")
+
+}catch(error){
+ res.status(500).json({success:false,messege:error.message});
+}
+})
+
 
 
 
